@@ -26,7 +26,7 @@ class Student
   end
   def get_students_by_name(name)
     @@students.select do |item|
-      item.name == @name
+      item.name == name
     end
   end
   def ==(other)
