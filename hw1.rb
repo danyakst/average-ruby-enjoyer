@@ -8,7 +8,7 @@ class Student
     @surname = surname
     @name = name
     @date_of_birth = Date.parse(date_of_birth)
-    add_student()
+    add_student
   end
   def calculate_age()
     (Date.today - @date_of_birth).to_i / 365
