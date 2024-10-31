@@ -21,7 +21,7 @@ class Student
   end
   def get_students_by_age(age)
     @@students.select do |item|
-      item.calculate_age == calculate_age
+      item.calculate_age == age
     end
   end
   def get_students_by_name(name)
