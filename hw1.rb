@@ -11,7 +11,10 @@ class Student
     add_student
   end
   def calculate_age()
-    (Date.today - @date_of_birth).to_i / 365
+    today = Date.today
+    age = today.year - @date_of_birth.year
+    age -= 1 if (today + age) > today
+    age
   end
   def add_student()
     @@students << self unless @@students.include?(self)
