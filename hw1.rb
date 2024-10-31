@@ -4,10 +4,10 @@ class Student
   attr_reader :surname, :name, :date_of_birth
   @@students = []
   def initialize(surname, name, date_of_birth)
+    raise ArgumentError unless (Date.parse(date_of_birth) <=> Date.today) == -1
     @surname = surname
     @name = name
     @date_of_birth = Date.parse(date_of_birth)
-    raise ArgumentError unless (@date_of_birth <=> Date.today) == -1
     add_student()
   end
   def calculate_age()
