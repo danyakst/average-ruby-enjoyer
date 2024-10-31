@@ -35,4 +35,7 @@ class Student
   def ==(other)
     @surname == other.surname && @name == other.name && @date_of_birth == other.date_of_birth
   end
+  def student
+    p @@students
+  end
 end
