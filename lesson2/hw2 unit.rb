@@ -5,7 +5,7 @@ require_relative '../lesson1/hw1'
 Minitest::Reporters.use! [
                            Minitest::Reporters::SpecReporter.new,
                            Minitest::Reporters::HtmlReporter.new(
-                             reports_dir: '/lesson2/test/reports',
+                             reports_dir: 'lesson2/test/reports',
                              report_filename: 'unit_test_results.html',
                              clean: true,
                              add_timestamp: true
