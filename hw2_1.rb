@@ -1,6 +1,17 @@
+require 'minitest/reporters'
 require 'minitest/autorun'
 require 'date'
 require_relative 'hw1'
+
+Minitest::Reporters.use! [
+                           Minitest::Reporters::SpecReporter.new,
+                           Minitest::Reporters::HtmlReporter.new(
+                             reports_dir: 'test/reports',
+                             report_filename: 'test_results.html',
+                             clean: true,
+                             add_timestamp: true
+                           )
+                         ]
 
 class StudentTest < Minitest::Test
   def setup
