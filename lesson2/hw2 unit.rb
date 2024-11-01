@@ -1,13 +1,12 @@
 require 'minitest/reporters'
 require 'minitest/autorun'
-require 'date'
-require_relative 'hw1'
+require_relative '../lesson1/hw1'
 
 Minitest::Reporters.use! [
                            Minitest::Reporters::SpecReporter.new,
                            Minitest::Reporters::HtmlReporter.new(
-                             reports_dir: 'test/reports',
-                             report_filename: 'test_results.html',
+                             reports_dir: '/lesson2/test/reports',
+                             report_filename: 'unit_test_results.html',
                              clean: true,
                              add_timestamp: true
                            )
@@ -15,11 +14,16 @@ Minitest::Reporters.use! [
 
 class StudentTest < Minitest::Test
   def setup
-    @student = Student.new('Abc', 'Abc', '18-10-2005')
+    @student = Student.new('Abc', 'Acd', '18-10-2005')
   end
   def teardown
     Student.students.clear
     @student = nil
+  end
+  def test_initialize
+        assert_equal 'Acd', @student.name, 'Name wasn\'t initialized correctly'
+        assert_equal 'Abc', @student.surname, 'Surname wasn\'t initialized correctly'
+        assert_equal Date.parse('18-10-2005'), @student.date_of_birth, 'Date of birth wasn\'t initialized correctly'
   end
   def test_wrong_date_of_birth
     assert_raises ArgumentError, 'This should have raised ArgumentError when date of birth is not in past' do 
@@ -35,24 +39,22 @@ class StudentTest < Minitest::Test
     assert_equal 1, Student.students.size, 'Same student was added into students'
   end
   def test_get_students_by_age
-    arr = [Student.new('Abe', 'Abx', '17-10-2005'),
-          Student.new('Abd', 'Abz', '19-10-2005'),
-          Student.new('Abf', 'Abh', '20-10-2005'),
-          Student.new('Abx', 'Abw', '21-10-2005'),
-          Student.new('Abx', 'Abw', '21-10-2008'),
-          Student.new('Abx', 'Abw', '21-10-2009')
-          ]
-    assert_equal 5, Student.get_students_by_age(18).length, 'get_students_by_age isn\'t working correctly'
+    Student.new('Abe', 'Abx', '17-10-2005')
+    Student.new('Abd', 'Abz', '19-10-2005')
+    Student.new('Abf', 'Abh', '20-10-2005')
+    Student.new('Abx', 'Abw', '21-10-2005')
+    Student.new('Abx', 'Abw', '21-10-2008')
+    Student.new('Abx', 'Abw', '21-10-2009')
+    assert_equal 5, Student.get_students_by_age(@student.calculate_age).length, 'get_students_by_age isn\'t working correctly'
   end
   def test_get_students_by_name
-    arr = [Student.new('Abc', 'Abc', '17-10-2005'),
-    Student.new('Abz', 'Abc', '19-10-2005'),
-    Student.new('Abe', 'Abc', '20-10-2005'),
-    Student.new('Abg', 'Abc', '21-10-2005'),
-    Student.new('Abx', 'Abw', '21-10-2008'),
+    Student.new('Abc', 'Abc', '17-10-2005')
+    Student.new('Abz', 'Abc', '19-10-2005')
+    Student.new('Abe', 'Abc', '20-10-2005')
+    Student.new('Abg', 'Abc', '21-10-2005')
+    Student.new('Abx', 'Abw', '21-10-2008')
     Student.new('Abf', 'Abd', '21-10-2009')
-    ]
-    assert_equal 5, Student.get_students_by_name('Abc').length, 'get_students_by_name isn\'t working correctly'
+    assert_equal 4, Student.get_students_by_name('Abc').length, 'get_students_by_name isn\'t working correctly'
   end
   def test_equal
     assert_equal Student.new('Abc', 'Abc', '23-10-2004'), Student.new('Abc', 'Abc', '23-10-2004'), 'student1 == student2 is not working correcly, it should be true'

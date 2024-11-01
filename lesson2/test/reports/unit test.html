@@ -11,16 +11,16 @@
 <body>
 <div class="container">
     <div class="jumbotron">
-        <h3><small>Generated on Nov 01, 2024 at 14:28 ╘шэы эфш  (чшьр)</small></h3>
+        <h3><small>Generated on Nov 01, 2024 at 18:01 ╘шэы эфш  (чшьр)</small></h3>
         <h1>
             Test Results</h1>
         <p>
-            Finished in 0.02s, 398.66 tests/s, 465.11 assertions/s
+            Finished in 0.00s, 1650.28 tests/s, 2593.30 assertions/s
         </p>
         <p>
             <strong>
-            <span class="text-info">6 tests</span>,
-            <span class="text-info"> 7 assertions</span>,
+            <span class="text-info">7 tests</span>,
+            <span class="text-info"> 11 assertions</span>,
             <span class=""> 0 failures</span>,
             <span class=""> 0 errors</span>,
             <span class=""> 0 skips</span>
@@ -44,10 +44,54 @@
 
     
         <div class="panel panel-default">
-            <div class="panel-heading"><strong>StudentTest</strong>
+            <div class="panel-heading"><strong>Student::initialize</strong>
                 <span class="pull-right">
-                    <span class="text-info">6 tests</span>,
-                    <span class="text-info"> 7 assertions</span>,
+                    <span class="text-info">2 tests</span>,
+                    <span class="text-info"> 5 assertions</span>,
+                    <span class=""> 0 failures</span>,
+                    <span class=""> 0 errors</span>,
+                    <span class=""> 0 skips</span>,
+                    <span> finished in 0.0001s</span>
+                </span>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    
+                        <div class="list-group-item">
+                            <h5 class="list-group-item-heading">
+                                
+                                    <span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>
+                                
+                                it It raises error when date of birth is wrong
+                                <span class="pull-right">
+                                    Assertions 1, time 0.000062s
+                                </span>
+                            </h5>
+                            
+                        </div>
+                    
+                        <div class="list-group-item">
+                            <h5 class="list-group-item-heading">
+                                
+                                    <span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>
+                                
+                                it creates correct instance
+                                <span class="pull-right">
+                                    Assertions 4, time 0.000046s
+                                </span>
+                            </h5>
+                            
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>Student::methods</strong>
+                <span class="pull-right">
+                    <span class="text-info">3 tests</span>,
+                    <span class="text-info"> 4 assertions</span>,
                     <span class=""> 0 failures</span>,
                     <span class=""> 0 errors</span>,
                     <span class=""> 0 skips</span>,
@@ -62,9 +106,9 @@
                                 
                                     <span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>
                                 
-                                test_adding_same_student_into_students
+                                it Finds students by age
                                 <span class="pull-right">
-                                    Assertions 1, time 0.000029s
+                                    Assertions 1, time 0.000128s
                                 </span>
                             </h5>
                             
@@ -75,9 +119,9 @@
                                 
                                     <span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>
                                 
-                                test_adding_unique_student_into_students
+                                it Finds students by name
                                 <span class="pull-right">
-                                    Assertions 1, time 0.000042s
+                                    Assertions 1, time 0.000095s
                                 </span>
                             </h5>
                             
@@ -88,9 +132,40 @@
                                 
                                     <span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>
                                 
-                                test_equal
+                                it correctly compares 2 students
                                 <span class="pull-right">
-                                    Assertions 2, time 0.000273s
+                                    Assertions 2, time 0.000333s
+                                </span>
+                            </h5>
+                            
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>Student::methods::test addition of student into list of students</strong>
+                <span class="pull-right">
+                    <span class="text-info">2 tests</span>,
+                    <span class="text-info"> 2 assertions</span>,
+                    <span class=""> 0 failures</span>,
+                    <span class=""> 0 errors</span>,
+                    <span class=""> 0 skips</span>,
+                    <span> finished in 0.0001s</span>
+                </span>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    
+                        <div class="list-group-item">
+                            <h5 class="list-group-item-heading">
+                                
+                                    <span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>
+                                
+                                it Adds unique student
+                                <span class="pull-right">
+                                    Assertions 1, time 0.000044s
                                 </span>
                             </h5>
                             
@@ -101,35 +176,9 @@
                                 
                                     <span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>
                                 
-                                test_get_students_by_age
+                                it Don't add same student
                                 <span class="pull-right">
-                                    Assertions 1, time 0.000126s
-                                </span>
-                            </h5>
-                            
-                        </div>
-                    
-                        <div class="list-group-item">
-                            <h5 class="list-group-item-heading">
-                                
-                                    <span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>
-                                
-                                test_get_students_by_name
-                                <span class="pull-right">
-                                    Assertions 1, time 0.000099s
-                                </span>
-                            </h5>
-                            
-                        </div>
-                    
-                        <div class="list-group-item">
-                            <h5 class="list-group-item-heading">
-                                
-                                    <span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>
-                                
-                                test_wrong_date_of_birth
-                                <span class="pull-right">
-                                    Assertions 1, time 0.000069s
+                                    Assertions 1, time 0.000027s
                                 </span>
                             </h5>
                             
