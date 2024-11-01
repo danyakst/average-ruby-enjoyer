@@ -4,7 +4,7 @@ class Student
   attr_reader :surname, :name, :date_of_birth
   @@students = []
   def initialize(surname, name, date_of_birth)
-    raise ArgumentError unless (Date.parse(date_of_birth) <=> Date.today) == -1
+    raise ArgumentError unless Date.parse(date_of_birth) < Date.today
     @surname = surname
     @name = name
     @date_of_birth = Date.parse(date_of_birth)
@@ -19,15 +19,15 @@ class Student
   def add_student()
     @@students << self unless @@students.include?(self)
   end
-  def remove_student()
-    @@students.delete(self)
+  def self.remove_student(student)
+    @@students.delete(student)
   end
-  def get_students_by_age(age)
+  def self.get_students_by_age(age)
     @@students.select do |item|
       item.calculate_age == age
     end
   end
-  def get_students_by_name(name)
+  def self.get_students_by_name(name)
     @@students.select do |item|
       item.name == name
     end
@@ -35,7 +35,7 @@ class Student
   def ==(other)
     @surname == other.surname && @name == other.name && @date_of_birth == other.date_of_birth
   end
-  def student
-    p @@students
+  def self.students
+    @@students
   end
 end
